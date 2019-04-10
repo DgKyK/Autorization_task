@@ -4,6 +4,5 @@ public class TestClass {
         View view = new View();
         MainController controller = new MainController(model, view);
         controller.startAction();
-        System.out.println("Add string!!");
     }
 }
