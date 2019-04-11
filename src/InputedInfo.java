@@ -11,11 +11,11 @@ public class InputedInfo{
 
     public String InputAndChekValid(String message, String regex){
         view.printMessage(message);
-        String result = "none";
+        String result = GlobalConstants.NONE;
         if(sc.hasNext()){
             while(!(((result = sc.next()) != null) && result.matches(regex))){
                 view.printMessage(view.stringConcat(GlobalConstants.WRONG_INPUT,
-                        GlobalConstants.SPACE,GlobalConstants.STRY_AGAIN));
+                        GlobalConstants.SPACE,GlobalConstants.TRY_AGAIN));
             }
         }
 
