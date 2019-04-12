@@ -1,3 +1,7 @@
+package Controller;
+
+import View.View;
+
 import java.util.Scanner;
 
 public class InputedInfo{
@@ -11,14 +15,12 @@ public class InputedInfo{
 
     public String InputAndChekValid(String message, String regex){
         view.printMessage(message);
-        String result = GlobalConstants.NONE;
+        String result = View.bundle.getString(GlobalConstants.NONE);
         if(sc.hasNext()){
             while(!(((result = sc.next()) != null) && result.matches(regex))){
-                view.printMessage(view.stringConcat(GlobalConstants.WRONG_INPUT,
-                        GlobalConstants.SPACE,GlobalConstants.TRY_AGAIN));
+                view.printWrongInput();
             }
         }
-
         return result;
     }
 }

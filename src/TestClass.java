@@ -1,3 +1,7 @@
+import Controller.MainController;
+import Model.Model;
+import View.View;
+
 public class TestClass {
     public static void main(String[] args){
         Model model = new Model();
