@@ -9,4 +9,6 @@ public interface GlobalConstants {
     String INPUT_NICKNAME = "input.nickname.string";
     String NONE = "none.string";
     String TRY_AGAIN = "try.again.string";
+    String INPUT_ANOTHER_NICKNAME = "input.another.nickname";
+    String NICKNAME_ALREADY_EXIST = "input.nickname.already.exist";
     }

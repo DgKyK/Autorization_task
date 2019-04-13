@@ -1,6 +1,8 @@
 package Controller;
 
+import DB.DBUsers;
 import View.View;
+import Exception.NickNameNotExclusiveException;
 
 import java.util.Scanner;
 
@@ -15,12 +17,22 @@ public class InputedInfo{
 
     public String InputAndChekValid(String message, String regex){
         view.printMessage(message);
-        String result = View.bundle.getString(GlobalConstants.NONE);
-        if(sc.hasNext()){
-            while(!(((result = sc.next()) != null) && result.matches(regex))){
-                view.printWrongInput();
-            }
+        String result;
+        while(!(sc.hasNext() && (result = sc.next()).matches(regex))){
+            view.printWrongInput();
         }
         return result;
+    }
+
+    public boolean isNickNameExclusive(String inputedNickName) throws NickNameNotExclusiveException{
+        DBUsers[] dbUsers = DBUsers.values();
+        for(DBUsers user : dbUsers){
+            if(inputedNickName.equals(user.getNickName())){
+                NickNameNotExclusiveException exception = new NickNameNotExclusiveException(inputedNickName);
+                throw exception;
+            }
+        }
+        return true;
+
     }
 }

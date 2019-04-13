@@ -4,6 +4,7 @@ package Controller;
 import Model.Model;
 import View.View;
 import Model.UserInfo;
+import Exception.NickNameNotExclusiveException;
 
 import static Controller.GlobalConstants.*;
 import static Controller.RegexData.*;
@@ -33,8 +34,22 @@ public class MainController {
     private void inputProcess(){
         userInfo.setFirstName(inputedInfo.InputAndChekValid(View.bundle.getString(INPUT_NAME), NAME_REGEX));
         userInfo.setSecondName(inputedInfo.InputAndChekValid(View.bundle.getString(INPUT_SURNAME), SURNAME_REGEX));
-        userInfo.setNickName(inputedInfo.InputAndChekValid(View.bundle.getString(INPUT_NICKNAME), NICK_NAME_REGEX));
+        userInfo.setNickName(inputAndCheckNicName());
     }
 
+    private String inputAndCheckNicName(){
+        String inputedNickname;
+        while(true){
+            try{
+                inputedNickname = inputedInfo.InputAndChekValid(View.bundle.getString(INPUT_NICKNAME), NICK_NAME_REGEX);
+                inputedInfo.isNickNameExclusive(inputedNickname);
+                break;
+            }catch(NickNameNotExclusiveException e){
+                view.printMessage(view.stringConcat(e.getWrongNickName(),View.bundle.getString(NICKNAME_ALREADY_EXIST),
+                        View.bundle.getString(INPUT_ANOTHER_NICKNAME)));
+            }
+        }
 
+        return inputedNickname;
+    }
 }
