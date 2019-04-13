@@ -23,10 +23,9 @@ public class UserInfo {
 
     @Override
     public String toString() {
-        return "Model.UserInfo{" +
+        return "UserInfo : " +
                 "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
-                ", nickName='" + nickName + '\'' +
-                '}';
+                ", nickName='" + nickName + '\'';
     }
 }
