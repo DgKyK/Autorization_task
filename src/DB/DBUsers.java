@@ -23,6 +23,7 @@ public enum DBUsers {
                 throw exception;
             }
         }
+
         return true;
     }
 
