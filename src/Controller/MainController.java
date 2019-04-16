@@ -1,6 +1,7 @@
 package Controller;
 
 
+import DB.DBUsers;
 import Model.Model;
 import View.View;
 import Model.UserInfo;
@@ -42,7 +43,7 @@ public class MainController {
         while(true){
             try{
                 inputedNickname = inputedInfo.InputAndChekValid(View.bundle.getString(INPUT_NICKNAME), NICK_NAME_REGEX);
-                inputedInfo.isNickNameExclusive(inputedNickname);
+                DBUsers.isNickNameExclusive(inputedNickname);
                 break;
             }catch(NickNameNotExclusiveException e){
                 view.printMessage(view.stringConcat(e.getWrongNickName(),View.bundle.getString(NICKNAME_ALREADY_EXIST),

@@ -23,16 +23,14 @@ public class InputedInfo{
         }
         return result;
     }
-
+/*
     public boolean isNickNameExclusive(String inputedNickName) throws NickNameNotExclusiveException{
-        DBUsers[] dbUsers = DBUsers.values();
-        for(DBUsers user : dbUsers){
+        for(DBUsers user : DBUsers.values()){
             if(inputedNickName.equals(user.getNickName())){
                 NickNameNotExclusiveException exception = new NickNameNotExclusiveException(inputedNickName);
                 throw exception;
             }
         }
         return true;
-
-    }
+    }*/
 }
