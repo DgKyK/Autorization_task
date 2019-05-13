@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 public interface RegexData {
     String NAME_REGEX = "[А-ЕЖЗЙ-ЩЮЯІЇЄ]{1}[а-еж-щьюяіїє']+[а-еж-щьюяіїє]+$";

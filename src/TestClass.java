@@ -1,6 +1,6 @@
-import Controller.MainController;
-import Model.Model;
-import View.View;
+import controller.MainController;
+import model.Model;
+import view.View;
 
 public class TestClass {
     public static void main(String[] args){

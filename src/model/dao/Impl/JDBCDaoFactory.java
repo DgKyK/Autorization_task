@@ -1,13 +1,12 @@
-package Model.dao.Impl;
+package model.dao.Impl;
 
-import Model.dao.DaoFactory;
-import Model.dao.UserDao;
+import model.dao.DaoFactory;
+import model.dao.UserDao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import com.mysql.jdbc.Driver;
 
 public class JDBCDaoFactory extends DaoFactory {
     @Override

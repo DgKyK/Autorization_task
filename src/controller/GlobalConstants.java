@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 public interface GlobalConstants {
     String INVITATION_MESSAGE = "invitation.string";

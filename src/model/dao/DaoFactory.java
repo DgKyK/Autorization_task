@@ -1,6 +1,6 @@
-package Model.dao;
+package model.dao;
 
-import Model.dao.Impl.JDBCDaoFactory;
+import model.dao.Impl.JDBCDaoFactory;
 
 public abstract class DaoFactory {
     private static DaoFactory daoFactory;

@@ -1,6 +1,6 @@
-package View;
+package view;
 
-import Controller.GlobalConstants;
+import controller.GlobalConstants;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

@@ -1,8 +1,8 @@
-package Model;
+package model;
 
-import Exception.NickNameNotExclusiveException;
-import Model.dao.DaoFactory;
-import Model.dao.UserDao;
+import exception.NickNameNotExclusiveException;
+import model.dao.DaoFactory;
+import model.dao.UserDao;
 
 import java.util.List;
 

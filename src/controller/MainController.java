@@ -1,12 +1,12 @@
-package Controller;
+package controller;
 
-import Model.Model;
-import View.View;
-import Model.UserInfo;
-import Exception.NickNameNotExclusiveException;
+import model.Model;
+import view.View;
+import model.UserInfo;
+import exception.NickNameNotExclusiveException;
 
-import static Controller.GlobalConstants.*;
-import static Controller.RegexData.*;
+import static controller.GlobalConstants.*;
+import static controller.RegexData.*;
 
 
 public class MainController {

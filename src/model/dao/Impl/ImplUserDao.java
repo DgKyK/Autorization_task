@@ -1,7 +1,7 @@
-package Model.dao.Impl;
+package model.dao.Impl;
 
-import Model.UserInfo;
-import Model.dao.UserDao;
+import model.UserInfo;
+import model.dao.UserDao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
