@@ -21,6 +21,10 @@ public class UserInfo {
         this.nickName = nickName;
     }
 
+    public String getNickName() {
+        return nickName;
+    }
+
     @Override
     public String toString() {
         return "UserInfo : " +
