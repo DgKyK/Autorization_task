@@ -18,12 +18,9 @@ public class Model {
     public boolean isNickNameExclusive(String inputedNickName) throws NickNameNotExclusiveException {
         DaoFactory factory = DaoFactory.getInstance();
         userDao = factory.createUserDao();
-        List<UserInfo> userInfoList = userDao.getAll();
-        for(UserInfo user : userInfoList){
-            if(inputedNickName.equals(user.getNickName())){
-                NickNameNotExclusiveException exception = new NickNameNotExclusiveException(inputedNickName);
-                throw exception;
-            }
+        if(userDao.findByNickName(inputedNickName) != null){
+            NickNameNotExclusiveException exception = new NickNameNotExclusiveException(inputedNickName);
+            throw exception;
         }
 
         return true;

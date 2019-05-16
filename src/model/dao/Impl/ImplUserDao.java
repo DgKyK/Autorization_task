@@ -3,16 +3,14 @@ package model.dao.Impl;
 import model.UserInfo;
 import model.dao.UserDao;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ImplUserDao implements UserDao {
     private Connection connection;
     private final String SELECT_ALL = "SELECT * FROM userinfo";
+    private final String SELECT_BY_NICK_NAME = "SELECT * FROM userinfo WHERE nick_name = ?";
 
     public ImplUserDao(Connection connection) {
         this.connection = connection;
@@ -34,6 +32,21 @@ public class ImplUserDao implements UserDao {
             e.printStackTrace();
         }
         return usersFromDb;
+    }
+
+    @Override
+    public UserInfo findByNickName(String nickName) {
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_NICK_NAME)) {
+            ps.setString(1,nickName);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+                UserInfo temp = buildUserFromResultSet(rs);
+                return temp;
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private UserInfo buildUserFromResultSet(ResultSet rs) throws SQLException {
